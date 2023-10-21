@@ -2,7 +2,7 @@ const PAUSE_COLOR = 'orange';
 const DUO_COLOR = 'green';
 const UNPAID_BORDER_STYLE = '2px solid red';
 const NOTFULLYPAID_BORDER_STYLE = '2px solid orange';
-
+// test for push
 var appointmentState = 0;
 var employeeText = "Employee: (If one is occupied the other should be tried)";
 var appointmentText = 'Entered by (ingevuld door): ' + current_user.data.display_name + ' ingevuld op: ';
