@@ -144,11 +144,16 @@ async function checkNewCustomer(){
 					let flag = jQuery('li > span > img.option-languages-flag[src$="us.png"]');
 					if(flag.length){
 						flag.click();
+						window.clickingLanguage = false;
 						break;
 					}
 					await sleep(20);
 				}
-				window.clickingLanguage = false;
+
+				if(window.clickingLanguage){
+					window.clickingLanguage = false;
+					console.error("THE LANGUAGE WAS NOT CAUGHT ON TIME");
+				}
 
 			}
 			
