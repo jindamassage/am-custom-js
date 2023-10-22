@@ -146,7 +146,7 @@ async function checkNewCustomer(){
 						flag.click();
 						break;
 					}
-					await sleep(10);
+					await sleep(20);
 				}
 				window.clickingLanguage = false;
 
@@ -535,7 +535,7 @@ setInterval(async function(){
 	changeCalendarByCustomerName('Break Pauze', PAUSE_COLOR)
 	swapAllPhoneLinksToWhatsapp();
 	//changeCalendarByStatus('approved', 'red');
-}, 200);
+}, 300);
 
 setInterval(async function(){
 	refreshCalendar()
