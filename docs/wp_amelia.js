@@ -85,7 +85,10 @@ jQuery(document).ready(function ($) {
 		
 			
 // 		console.log('end onload');
+// 		
 	}
+	
+
 });
 
 
@@ -426,7 +429,10 @@ async function refreshCalendar(){
 						if(apt.bookings[0].customer.phone ){ 
 							
 							apt.bookings[0].customer.phone = apt.bookings[0].customer.phone.replaceAll(' ', '').replace('+', '');
-							table[hsh].querySelector('span.am-calendar-customer').innerHTML += `<a class="toggled_phones" href="https://wa.me/${apt.bookings[0].customer.phone}"  target="_blank" style="margin-left:5px">${apt.bookings[0].customer.phone}</a><br>`;
+
+							if( window.toggle_phone){
+								table[hsh].querySelector('span.am-calendar-customer').innerHTML += `<a class="toggled_phones" href="https://wa.me/${apt.bookings[0].customer.phone}"  target="_blank" style="margin-left:5px">${apt.bookings[0].customer.phone}</a><br>`;
+							}
 						}
 
 						let newDiv = document.createElement('DIV');
@@ -548,7 +554,9 @@ async function refreshCalendar(){
 						
 						if(apt.bookings[0].customer.phone ){
 							apt.bookings[0].customer.phone = apt.bookings[0].customer.phone.replaceAll(' ', '').replace('+', '');
-							table[hsh].querySelector('span.am-calendar-customer').innerHTML += `<a class="toggled_phones" href="https://wa.me/${apt.bookings[0].customer.phone}"  target="_blank" style="margin-left:5px">${apt.bookings[0].customer.phone}</a><br>`;
+							if( window.toggle_phone){
+								table[hsh].querySelector('span.am-calendar-customer').innerHTML += `<a class="toggled_phones" href="https://wa.me/${apt.bookings[0].customer.phone}"  target="_blank" style="margin-left:5px">${apt.bookings[0].customer.phone}</a><br>`;
+							}
 							
 						}
 
@@ -621,7 +629,7 @@ async function refreshCalendar(){
 			let translateDiv = document.createElement('DIV');
 			translateDiv.id = 'google_translate_element';
 			translateDiv.innerHTML = 'hey_google_translate_element';
-			div.appendChild(translateDiv);
+			//body.appendChild(translateDiv);
 
 			jQuery("body").append(' <script type="text/javascript"> function googleTranslateElementInit() { new google.translate.TranslateElement( {pageLanguage: \'nl\'}, \'google_translate_element\' );} </script>');
 			
@@ -661,12 +669,29 @@ async function swapAllPhoneLinksToWhatsapp(){
 
 }
 
+async function catchHelpButton(){
+	if(window.toggle_phone != undefined){return;}
+	let btn = document.getElementsByClassName('am-help-button');
+	if(btn.length){
+		btn = btn[0];
+		if(btn.href.length){
+			window.toggle_phone = false;
+			btn.removeAttribute("href");
+			btn.onclick = function(){
+				window.toggle_phone = ! window.toggle_phone;
+				refreshCalendar();
+			}
+		}
+	}
+}
+
 setInterval(async function(){
 	removeAlogo();
 	checkApt();
 	checkNewCustomer();
-	changeCalendarByCustomerName('Break Pauze', PAUSE_COLOR)
+	changeCalendarByCustomerName('Break Pauze', PAUSE_COLOR);
 	swapAllPhoneLinksToWhatsapp();
+	catchHelpButton();
 	//changeCalendarByStatus('approved', 'red');
 }, 200);
 
