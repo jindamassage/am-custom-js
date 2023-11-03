@@ -445,7 +445,9 @@ async function refreshCalendar(){
 
 						table[hsh].getElementsByClassName('fc-content')[0].appendChild(div);
 						//console.log(apt);
-						table[hsh].getElementsByClassName('fc-time')[0].children[0].innerHTML += ' ['+apt.bookingEnd.split(' ')[0].split('-').reverse().join('-')+']';
+						//
+						let dateName = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][(new Date(apt.bookingEnd)).getDay()];
+						table[hsh].getElementsByClassName('fc-time')[0].children[0].innerHTML += ' [ ' + dateName+' '+apt.bookingEnd.split(' ')[0].split('-').reverse().join('-')+']';
 						
 						if(apt.service.name.includes('DUO')){
 							jQuery(table[hsh]).css('background-color', DUO_COLOR)
@@ -566,7 +568,10 @@ async function refreshCalendar(){
 					
 						
 						table[hsh].getElementsByClassName('fc-content')[0].appendChild(div);
-						table[hsh].getElementsByClassName('fc-time')[0].children[0].innerHTML += ' ['+apt.bookingEnd.split(' ')[0].split('-').reverse().join('-')+']';
+						
+						let dateName = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][(new Date(apt.bookingEnd)).getDay()];
+						table[hsh].getElementsByClassName('fc-time')[0].children[0].innerHTML += ' [ ' + dateName+' '+apt.bookingEnd.split(' ')[0].split('-').reverse().join('-')+']';
+						
 						
 						if(apt.service.name.includes('DUO')){
 							jQuery(table[hsh]).css('background-color', DUO_COLOR)
