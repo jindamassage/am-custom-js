@@ -1,4 +1,4 @@
-console.log('admin custom js file23 !!')
+console.log('ADMIN AMELIA GITHUB !!')
 // var displayName = jinda_custom.current_user.display_name;
 
 jQuery(document).ready(function ($) {
