@@ -1,12 +1,104 @@
+console.log('admin custom js file23 !!')
+// var displayName = jinda_custom.current_user.display_name;
+
+jQuery(document).ready(function ($) {
+	console.log('Running custom-script.js (modify in appearance > theme file editor');
+// 	var displayName2 = jinda_custom.current_user.display_name;
+ //	console.log('ready function12');
+//	console.log('display_name:' + current_user.data.display_name);
+//	console.dir(current_user);
+// 	console.log('username2:' + displayName2);
+ 	
+
+// 	console.log($("#am-calendar > div.am-page-header.am-section > div > div.align-right.v-calendar-column.el-col.el-col-18 > div > button"));
+// 	console.log($("#pane-schedule > div:nth-child(4) > div > div > div > input"));
+	
+// 	console.log($("#pane-schedule > div:nth-child(4) > div > div > div > input").val())
+	$("#pane-schedule > div:nth-child(4) > div > div > div > input").attr("readonly", false); 
+	var dateCat = $("#pane-schedule > div:nth-child(4) > div > div > div > input").val('Jinda Thai Massage Palmstraat Oss');
+	console.log(dateCat.val())
+	$("#pane-schedule > div:nth-child(4) > div > div > div > input").attr("readonly", false); 
+	$("#pane-schedule > div:nth-child(4) > div > div > div > input").val("Glenn Quagmire");
+// 	console.log($("#pane-schedule > div:nth-child(4) > div > div > div > input").val())
+
+	
+	console.log($("#am-calendar > div.am-section.am-calendar > div.am-calendar-employees"));
+	console.log('should be added');
+	
+	window.onload = function() {
+		
+// 		console.log('onload');		
+// 		console.log($("#am-calendar > div.am-page-header.am-section > div > div.align-right.v-calendar-column.el-col.el-col-18 > div > button"));
+// 		console.log($("#pane-schedule > div:nth-child(4) > div > div > div > input"));
+			setTimeout(function() {
+				//    jQuery("#am-calendar > div.am-section.am-calendar > div.am-calendar-employees").append("<div><h2>&gt;Is er bij 1 masseuse geen plek, kijk dan zeker ook bij de andere masseuse door hier op de foto te klikken </h2></div>");
+				// Above one added the text to the main dashboard
+		//		 jQuery("#am-calendar > div.am-section.am-calendar > div.am-calendar-employees").append("<div><span style='color:red;font-weight:bold;'>Bizziphone: Dinsdag 11 april (vandaag) zijn er installatie werkzaamheden daarom is tot 16:30 geblokkeerd</span></div>");
+				
+ 					console.log('after timeout');		
+			  }, 500);
+// 		
+	
+
+// 		console.log($("#pane-schedule > div:nth-child(4) > div > div > div > input").val())
+		$("#pane-schedule > div:nth-child(4) > div > div > div > input").attr("readonly", false); 
+		var dateCat = $("#pane-schedule > div:nth-child(4) > div > div > div > input").val('Jinda Thai Massage Palmstraat Oss');
+// 		console.log(dateCat.val())
+		$("#pane-schedule > div:nth-child(4) > div > div > div > input").attr("readonly", false); 
+		$("#pane-schedule > div:nth-child(4) > div > div > div > input").val("Glenn Quagmire");
+// 			console.log($("#pane-schedule > div:nth-child(4) > div > div > div > input").val())
+// 			
+// 			
+// 			
+		var myFunction = function(){
+ 			console.log('clicked2');		
+			
+// 			console.log($("#pane-schedule > div:nth-child(4) > div > div > div > input").val());
+
+// 			console.log('huh2');		
+			  setTimeout(function() {
+				   console.log(jQuery("#pane-schedule > div:nth-child(5) > label"));
+				   jQuery("#pane-schedule > div:nth-child(5) > label").append(' (<b>Kies andere medewerkster als 1 bezet is.</b>)');
+				   $("#pane-schedule > div:nth-child(4) > div > div > div > input").attr("readonly", false); 
+				   
+				   jQuery("#pane-schedule > div:nth-child(4) > div > div > div > input").val('Jinda Thai Massage Palmstraat Oss');
+				  
+			//	  "body > div.el-select-dropdown.el-popper.is-multiple.am-dropdown-cabinet > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > div > div"
+				  jQuery(".am-drop-create-item").on('click',function(){
+					  console.log('clicked create customer');				
+					  setTimeout(function() {
+		// 				   $("#pane-schedule > div:nth-child(4) > div > div > div > input").attr("readonly", false); 
+
+						  // jQuery("#am-calendar > div:nth-child(5) > div > div.el-dialog__body > div > div.am-dialog-scrollable > form > div:nth-child(6) > div > div > div > input").val('Dutch');
+						   jQuery("body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(2)").click();
+						   console.log('after timeout create customer');		
+					  }, 900);
+				  });	
+				  
+				  //jQuery("#pane-schedule > div:nth-child(10) > div > div > textarea").val('Entered by (ingevuld door): ' + current_user.data.display_name + ' ingevuld op: ');
+				  
+  				   console.log('after timeout');		
+			  }, 500); 			
+		}
+		$("#am-calendar > div.am-page-header.am-section > div > div.align-right.v-calendar-column.el-col.el-col-18 > div > button").on('click',myFunction);		
+		$("#am-plus-symbol").on('click',myFunction);		
+		
+			
+// 		console.log('end onload');
+	}
+});
+
+
 const PAUSE_COLOR = 'orange';
 const DUO_COLOR = 'green';
+const SPECIAL_COLOR = 'olive';
 const UNPAID_BORDER_STYLE = '2px solid red';
 const NOTFULLYPAID_BORDER_STYLE = '2px solid orange';
-// test for push
+
 var appointmentState = 0;
 var employeeText = "Employee: (If one is occupied the other should be tried)";
-var appointmentText = 'Entered by (ingevuld door): ' + current_user.data.display_name + ' ingevuld op: ';
-var customerText = 'Entered by (ingevuld door): ' + current_user.data.display_name + ' ingevuld op: ';
+var appointmentText = 'Entered by (ingevuld door): ' + current_user.data.display_name + ' (' + current_user.data.user_ip_address + ') ingevuld op: ';
+var customerText = 'Entered by (ingevuld door): ' + current_user.data.display_name + ' (' + current_user.data.user_ip_address + ') ingevuld op: ';
 
 var sheet = window.document.styleSheets[0];
 sheet.insertRule('.is-disabled { display: none;}', sheet.cssRules.length);
@@ -144,16 +236,11 @@ async function checkNewCustomer(){
 					let flag = jQuery('li > span > img.option-languages-flag[src$="us.png"]');
 					if(flag.length){
 						flag.click();
-						window.clickingLanguage = false;
 						break;
 					}
-					await sleep(20);
+					await sleep(10);
 				}
-
-				if(window.clickingLanguage){
-					window.clickingLanguage = false;
-					console.error("THE LANGUAGE WAS NOT CAUGHT ON TIME");
-				}
+				window.clickingLanguage = false;
 
 			}
 			
@@ -324,6 +411,7 @@ async function refreshCalendar(){
 					if(table[hsh] != undefined && document.getElementById(hsh.replaceAll(' ', '_')+'_for_customjs') == undefined){
 						let div = document.createElement('DIV');
 						div.id = hsh.replaceAll(' ', '_')+'_for_customjs';
+
 						
 						table[hsh].querySelector('span.am-calendar-customer').innerHTML =apt.id + ' ' + table[hsh].querySelector('span.am-calendar-customer').innerHTML;
 						
@@ -361,8 +449,12 @@ async function refreshCalendar(){
 						
 						if(apt.service.name.includes('DUO')){
 							jQuery(table[hsh]).css('background-color', DUO_COLOR)
-
 						}
+						if(apt.service.name.includes('special')){
+							jQuery(table[hsh]).css('background-color', SPECIAL_COLOR)
+						}
+						
+						
 
 						let extraField = JSON.parse(apt.bookings[0].customFields);
 						for(const extraFieldName in extraField){
@@ -373,6 +465,8 @@ async function refreshCalendar(){
 							if( extraField[extraFieldName].label == 'Voorkeur masseuse (V) of masseur (M)' && extraField[extraFieldName].value){
 								div.innerHTML += `Voorkeur masseuse (V) of masseur (M): ${extraField[extraFieldName].value} <br>`
 							}
+							
+							
 						}
 
 						
@@ -394,10 +488,7 @@ async function refreshCalendar(){
 		
 
 
-
-
-
-		}else if(chosenBefore == 'fc-day-button'){
+		} else if(chosenBefore == 'fc-day-button'){
 
 			// connect the shown one with the right one
 			
@@ -471,26 +562,48 @@ async function refreshCalendar(){
 						div.appendChild(newDiv);
 
 
-
-
+// 						const $ = jQuery(dom.window);
+					
+						
 						table[hsh].getElementsByClassName('fc-content')[0].appendChild(div);
 						table[hsh].getElementsByClassName('fc-time')[0].children[0].innerHTML += ' ['+apt.bookingEnd.split(' ')[0].split('-').reverse().join('-')+']';
 						
 						if(apt.service.name.includes('DUO')){
 							jQuery(table[hsh]).css('background-color', DUO_COLOR)
-
+						}
+						if(apt.service.name.includes('special')){
+							jQuery(table[hsh]).css('background-color', SPECIAL_COLOR)
 						}
 
 						let extraField = JSON.parse(apt.bookings[0].customFields);
-						for(const extraFieldName in extraField){
-							if( extraField[extraFieldName].label == 'Voorkeur masseuse' && extraField[extraFieldName].value){
-								div.innerHTML += `Voorkeur masseuse: ${extraField[extraFieldName].value} <br>`
+						for(const extraFieldName in extraField){							
+							if (!extraField[extraFieldName].value){
+								continue;
+							}
+														
+							if( extraField[extraFieldName].label == 'Welke massage wilt u'){
+								if (extraField[extraFieldName].value.includes('weet')) {
+									div.innerHTML += `<b>Massage type:</b> I dont know, ask me<br/>`
+								} else {
+									div.innerHTML += `<b>Massage type:</b> ${extraField[extraFieldName].value} <br/>`
+								}
+							}
+							
+							
+							if( extraField[extraFieldName].label == 'Opmerkingen en verzoeken'){
+								div.innerHTML += `<br/><b>Customer note:</b> ${extraField[extraFieldName].value} <br/>`								
+							}
+							
+							
+							if( extraField[extraFieldName].label == 'Voorkeur masseuse'){
+								div.innerHTML += `<b>Voorkeur masseuse:</b> ${extraField[extraFieldName].value} <br/>`
 							}
 
-							if( extraField[extraFieldName].label == 'Voorkeur masseuse (V) of masseur (M)' && extraField[extraFieldName].value){
-								div.innerHTML += `Voorkeur masseuse (V) of masseur (M): ${extraField[extraFieldName].value} <br>`
+							if( extraField[extraFieldName].label == 'Voorkeur masseuse (V) of masseur (M)'){
+								div.innerHTML += `<b>Voorkeur masseuse (V) of masseur (M):</b> ${extraField[extraFieldName].value} <br/>`
 							}
 						}
+						
 						//console.log('FOUND');
 
 					}
@@ -498,6 +611,16 @@ async function refreshCalendar(){
 				})
 			}
 
+			
+			
+			let translateDiv = document.createElement('DIV');
+			translateDiv.id = 'google_translate_element';
+			translateDiv.innerHTML = 'hey_google_translate_element';
+			div.appendChild(translateDiv);
+
+			jQuery("body").append(' <script type="text/javascript"> function googleTranslateElementInit() { new google.translate.TranslateElement( {pageLanguage: \'nl\'}, \'google_translate_element\' );} </script>');
+			
+			
 
 		}
 	}
@@ -540,7 +663,7 @@ setInterval(async function(){
 	changeCalendarByCustomerName('Break Pauze', PAUSE_COLOR)
 	swapAllPhoneLinksToWhatsapp();
 	//changeCalendarByStatus('approved', 'red');
-}, 300);
+}, 200);
 
 setInterval(async function(){
 	refreshCalendar()
